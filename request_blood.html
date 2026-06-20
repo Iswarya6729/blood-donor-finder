@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Blood Request</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🚨 Emergency Blood Request</h2>
+</div>
+
+<div class="form-container">
+
+    <h2>Request Blood for a Patient</h2>
+
+    <form action="/submit_request" method="POST">
+
+        <input type="text"
+               name="patient_name"
+               placeholder="Patient Name"
+               required>
+
+        <select name="blood_group" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <input type="text"
+               name="city"
+               placeholder="City"
+               required>
+
+        <input type="text"
+               name="hospital"
+               placeholder="Hospital Name"
+               required>
+
+        <input type="text"
+               name="contact"
+               placeholder="Contact Number"
+               required>
+
+        <button type="submit">
+            Submit Emergency Request
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

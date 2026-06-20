@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Donor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🩸 Smart Blood Donor Finder</h2>
+</div>
+
+<div class="form-container">
+
+    <h2>Register as a Blood Donor</h2>
+
+    <form action="/add_donor" method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="number" name="age" placeholder="Age" required>
+
+        <select name="blood_group" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <input type="text" name="phone" placeholder="Phone Number" required>
+
+        <input type="text" name="city" placeholder="City" required>
+
+        <select name="availability">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+
+        <label>Last Donation Date</label>
+
+        <input type="date" name="last_donation_date">
+
+        <button type="submit">Register Donor</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h1>🔍 Blood Donor Search Results</h1>
+</div>
+
+{% if donors %}
+
+<div class="cards">
+
+```
+{% for donor in donors %}
+
+<div class="card">
+
+    <h2>{{ donor[1] }}</h2>
+
+    <p><strong>🩸 Blood Group:</strong> {{ donor[3] }}</p>
+
+    <p><strong>🎂 Age:</strong> {{ donor[2] }}</p>
+
+    <p><strong>📍 City:</strong> {{ donor[5] }}</p>
+
+    <p><strong>📞 Phone:</strong> {{ donor[4] }}</p>
+
+    <p><strong>✅ Status:</strong> {{ donor[6] }}</p>
+
+</div>
+
+{% endfor %}
+```
+
+</div>
+
+{% else %}
+
+<div class="form-container">
+
+```
+<h1>😔 No Donors Found</h1>
+
+<p>
+    We couldn't find any donors matching your search.
+</p>
+
+<p>
+    Try another blood group or city.
+</p>
+
+<br>
+
+<a href="/search" class="btn">
+    🔍 Search Again
+</a>
+
+<a href="/" class="btn">
+    🏠 Home
+</a>
+```
+
+</div>
+
+{% endif %}
+
+<br><br>
+
+</body>
+</html>
